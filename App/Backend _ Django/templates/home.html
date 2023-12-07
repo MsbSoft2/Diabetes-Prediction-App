@@ -1,0 +1,113 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+
+    <img
+            class="rounded-3 w-100 mb-2"
+            height="180"
+            src="{% static 'diabetes-1024x367.jpg' %}"
+            alt=""
+    />
+    <div class="row">
+        <div class="col-md-9 col-sm-6">
+            <h1 class="display-4 border-bottom border-primary py-3 mb-3">
+                برنامه تشخیص بیماری دیابت
+            </h1>
+            {% if ans != null %}
+                <p class="alert alert-warning text-center">
+                    نتیجه: کاربر {{ fn }} بیماری دیابت {% if ans == 1 %} دارد {% else %} ندارد
+                {% endif %}
+                </p>
+            {% endif %}
+            <form action="{% url 'home' %}" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label small">نام کامل</label>
+                            <input required id="fn" name="fn" type="text" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small">جنسیت</label>
+                            <select name="gen" class="form-control">
+                                <option value="male">مذکر</option>
+                                <option value="female">مونث</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small">بارداری: تعداد دفعات بارداری</label>
+                            <input name="prag" type="number" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >گلوکز: غلظت گلوکز پلاسما 2 ساعت در آزمایش تحمل گلوکز
+                                خوراکی</label
+                            >
+                            <input name="gol" type="number" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >فشار خون: فشار خون دیاستولیک (میلی متر جیوه)</label
+                            >
+                            <input name="bp" type="number" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >ضخامت پوست: ضخامت چین های پوستی سه سر بازو (میلی متر)</label
+                            >
+                            <input name="th" type="number" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >انسولین: انسولین سرم 2 ساعته (mu U/ml)</label
+                            >
+                            <input name="an" type="number" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >BMI : شاخص توده بدنی (وزن بر حسب کیلوگرم/(قد بر حسب
+                                متر)^2)</label
+                            >
+                            <input name="bmi" type="text" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small"
+                            >DiabetesPedigreeFunction : عملکرد شجره نامه دیابت
+                            </label>
+                            <input name="dpf" type="text" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small">سن: سن (سال)</label>
+                            <input name="age" type="number" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success w-100">تشخیص</button>
+            </form>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <h2>مطالب</h2>
+            <ul class="list-group w-100">
+                <li class="list-group-item">
+                    <a href="{% url 'blog' %}" class="text-decoration-none">دیابت چیست</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'about' %}" class="text-decoration-none">درباره ما</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+{#{% block script %}#}
+{#    <script>#}
+{#        $('#btn').click(function () {#}
+{#            let fn = $('#fn').val();#}
+{#            alert(fn);#}
+{#            $.post('{% url 'pred' %}',#}
+{#                function (data, status) {#}
+{#                    alert(data + '\nstatus:' + status);#}
+{#                }).header();#}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}

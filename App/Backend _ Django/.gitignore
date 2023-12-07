@@ -1,0 +1,5 @@
+# dependencies
+/venv
+
+# local db
+db.sqlite3
