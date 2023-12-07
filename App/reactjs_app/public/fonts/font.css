@@ -1,0 +1,59 @@
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 300;
+    src: url(./iranyekanwebregular.e31c09af.woff2);
+    src: url(./iranyekanwebregular.e31c09af.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 500;
+    src: url(./iranyekanwebmedium.2d4f96e5.woff);
+    src: url(./iranyekanwebmedium.2d4f96e5.woff) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 700;
+    src: url(./iranyekanwebbold.cfb6e26c.woff2);
+    src: url(./iranyekanwebbold.cfb6e26c.woff2) format("woff2"), url(./iranyekanwebbold.cfb6e26c.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 800;
+    src: url(./iranyekanwebextrabold.9346e9a2.woff);
+    src: url(./iranyekanwebextrabold.9346e9a2.woff) format("woff2"), url(./iranyekanwebextrabold.9346e9a2.woff) format("woff")
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 950;
+    src: url(./iranyekanwebextrabold.9346e9a2.woff);
+    src: url(./iranyekanwebextrabold.9346e9a2.woff) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./iranyekanwebregular.e31c09af.woff2);
+    src: url(./iranyekanwebregular.e31c09af.woff2) format("woff2")
+}
+
+*{
+    font-family: IRANYekan;
+}
